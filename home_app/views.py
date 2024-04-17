@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from pyexpat.errors import messages
+from django.contrib import messages
 from django.contrib.auth import authenticate, login
 
 
@@ -18,8 +18,8 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            # Przekieruj do strony głównej po pomyślnym logowaniu
-            return redirect('home')
+            return redirect('wybor_czujnika')
         else:
             messages.error(request, 'Nieprawidłowa nazwa użytkownika lub hasło')
-    return render(request, 'login.html')
+    return render(request, 'home_app/login.html')
+

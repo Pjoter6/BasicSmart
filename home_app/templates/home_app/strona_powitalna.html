@@ -13,7 +13,7 @@
     <style>
         .form-box { margin-top: 10px; }
         label, input { display: block; }
-        input[type="text"], input[type="password"], input[type="email"] { width: 30%; }
+        input[type="text"], input[type="password"], input[type="email"] { width: 40%; }
         button { margin-top: 20px; }
     </style>
 </head>
@@ -27,7 +27,7 @@
         <!-- Formularz logowania -->
         <div class="form-box">
             <h2>Logowanie</h2>
-            <form action="login" method="post">
+            <form action="{%url 'login'%}" method="post">
                 {% csrf_token %}
                 <label for="login-username">Nazwa użytkownika:</label>
                 <input type="text" id="login-username" name="username" required>

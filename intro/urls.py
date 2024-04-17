@@ -23,4 +23,5 @@ urlpatterns = [
     path('', include('home_app.urls')),
     path('home/', include('home_app.urls')),
     path('login/', login_view, name='login'),
+#   path('')
 ]
