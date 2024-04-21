@@ -11,10 +11,12 @@
 <body>
     <h1>Dostępne urządzenia</h1>
 
-
-    <img src="{%static 'home_app/obrazy/zarowka.jpg' %}" alt="zarowka" id="bulb-btn" style="width:300px;cursor:pointer;">
-    <img src="{%static 'home_app/obrazy/termometr.jpg'%}" alt="Termometr" id="thermometer-btn" style="width:300px;cursor:pointer;">
-
+    <a href="{% url 'tabelaZarowka' %}">
+        <img src="{%static 'home_app/obrazy/zarowka.jpg' %}" alt="zarowka" id="bulb-btn" style="width:300px;cursor:pointer;">
+    </a>
+    <a href="{% url 'image_view'" method="post">
+        <img src="{%static 'home_app/obrazy/termometr.jpg'%}" alt="Termometr" id="thermometer-btn" style="width:300px;cursor:pointer;">
+    </a>
     <script>
 
     </script>
