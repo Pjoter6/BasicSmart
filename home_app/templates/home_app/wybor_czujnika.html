@@ -1,0 +1,24 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Wybierz opcje czujników</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Dostępne urządzenia</h1>
+
+    <a href="{% url 'tabelaZarowka' %}">
+        <img src="{%static 'home_app/obrazy/zarowka.jpg' %}" alt="zarowka" id="bulb-btn" style="width:300px;cursor:pointer;">
+    </a>
+    <a href="{% url 'image_view'" method="post">
+        <img src="{%static 'home_app/obrazy/termometr.jpg'%}" alt="Termometr" id="thermometer-btn" style="width:300px;cursor:pointer;">
+    </a>
+    <script>
+
+    </script>
+</body>
+</html>
