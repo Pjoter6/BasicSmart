@@ -1,0 +1,12 @@
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Akcja</th>
+    </tr>
+    {% for item in dane %}
+    <tr>
+        <td>{{ item.id }}</td>
+        <td>{{ item.akcja }}</td>
+    </tr>
+    {% endfor %}
+</table>

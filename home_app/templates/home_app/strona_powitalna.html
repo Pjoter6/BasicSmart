@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aplikacja SmartHomeBasic</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+    {% load static %}
+    <style>
+        .form-box { margin-top: 10px; }
+        label, input { display: block; }
+        input[type="text"], input[type="password"], input[type="email"] { width: 40%; }
+        button { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Witaj na stronie BasicSmartHome</h1>
+       <!-- Obraz tawerny -->
+    <img src="{% static 'home_app/obrazy/tawerna.png' %}" alt="Średniowieczna tawerna">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container fixed">
+        <!-- Formularz logowania -->
+        <div class="form-box">
+            <h2>Logowanie</h2>
+            <form action="{%url 'login'%}" method="post">
+                {% csrf_token %}
+                <label for="login-username">Nazwa użytkownika:</label>
+                <input type="text" id="login-username" name="username" required>
+
+                <label for="login-password">Hasło:</label>
+                <input type="password" id="login-password" name="password" required>
+
+                <button type="submit">Zaloguj się</button>
+            </form>
+        </div>
+
+
+
+<!--        &lt;!&ndash; Formularz rejestracji &ndash;&gt;-->
+
+<!--        <div class="form-box">-->
+<!--            <h2>Rejestracja</h2>-->
+<!--            <form action="/sciezka_do_rejestracji/" method="post">-->
+<!--                {% csrf_token %}-->
+<!--                <label for="register-username">Nazwa użytkownika:</label>-->
+<!--                <input type="text" id="register-username" name="username" required>-->
+
+<!--                <label for="register-email">Email:</label>-->
+<!--                <input type="email" id="register-email" name="email" required>-->
+
+<!--                <label for="register-password">Hasło:</label>-->
+<!--                <input type="password" id="register-password" name="password" required>-->
+
+<!--                <label for="register-confirm-password">Potwierdź hasło:</label>-->
+<!--                <input type="password" id="register-confirm-password" name="confirm_password" required>-->
+
+<!--                <button type="submit">Zarejestruj się</button>-->
+<!--            </form>-->
+<!--        </div>-->
+      </div>
+    </nav>
+
+</body>
+</html>

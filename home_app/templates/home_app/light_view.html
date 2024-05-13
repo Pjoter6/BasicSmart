@@ -1,0 +1,34 @@
+
+
+<!DOCTYPE html>
+
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>Kontrola Oświetlenia</h1>
+
+
+    <p>Światło jest : {{ light.is_on|yesno:"on,off" }}</p>
+    <p>Ostatnia aktywacja: {{ light.last_activated }}</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" name="aktywacja" value="1">AKTYWACJA</button>
+        <button type="submit" name="aktywacja" value="0">DEZAKTYWACJA</button>
+
+    </form>
+
+    <p>Światło drugie jest : {{ light.is_on|yesno:"on,off" }}</p>
+    <p>Ostatnia aktywacja: {{ light.last_activated }}</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" name="aktywacja" value="1">AKTYWACJA</button>
+        <button type="submit" name="aktywacja" value="0">dezaktywacja</button>
+    </form>
+
+
+</body>
+</html>
